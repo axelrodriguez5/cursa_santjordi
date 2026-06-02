@@ -21,7 +21,7 @@
         {% for p in classificacio %}
         <tr {% if forloop.counter == 1 %}class="table-warning"{% endif %}>
             <td>
-                {% if forloop.counter == 1 %}🥇{% elif forloop.counter == 2 %}🥈{% elif forloop.counter == 3 %}🥉{% else %}{{ forloop.counter }}{% endif %}
+                {% if forloop.counter == 1 %}1{% elif forloop.counter == 2 %}2{% elif forloop.counter == 3 %}3{% else %}{{ forloop.counter }}{% endif %}
             </td>
             <td><strong>{{ p.dorsal }}</strong></td>
             <td>{{ p.nom }} {{ p.cognoms }}</td>
