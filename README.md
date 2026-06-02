@@ -42,7 +42,7 @@ python manage.py runserver
 
 Obre el navegador a: http://localhost:8000/
 
-## 🗂️ Estructura del projecte
+##  Estructura del projecte
 
 ```
 cursa_santjordi/
