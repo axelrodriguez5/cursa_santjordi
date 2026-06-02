@@ -1,8 +1,8 @@
-# 🌹 Cursa de Sant Jordi - Institut Sa Palomera
+#  Cursa de Sant Jordi - Institut Sa Palomera
 
 Aplicació web desenvolupada amb **Django** per gestionar la cursa de Sant Jordi de l'institut.
 
-## 📋 Funcionalitats
+##  Funcionalitats
 
 - Gestió de **participants** (CRUD complet: crear, llistar, editar, eliminar)
 - Gestió de **categories** per edat
@@ -12,14 +12,14 @@ Aplicació web desenvolupada amb **Django** per gestionar la cursa de Sant Jordi
 - **Missatges del sistema** quan es realitzen accions
 - Interfície responsiva amb **Bootstrap 5**
 
-## 🛠️ Tecnologies
+##  Tecnologies
 
 - Python 3
 - Django 5.2
 - SQLite
 - Bootstrap 5
 
-## 🚀 Instal·lació
+##  Instal·lació
 
 ```bash
 # 1. Clonar el repositori
@@ -36,13 +36,7 @@ pip install -r requirements.txt
 # 4. Aplicar migracions
 python manage.py migrate
 
-# 5. (Opcional) Crear un superusuari per l'admin
-python manage.py createsuperuser
-
-# 6. (Opcional) Carregar dades de prova
-python manage.py shell < carregar_dades.py
-
-# 7. Executar el servidor
+# 5. Executar el servidor
 python manage.py runserver
 ```
 
@@ -55,7 +49,7 @@ cursa_santjordi/
 ├── manage.py
 ├── requirements.txt
 ├── .gitignore
-├── carregar_dades.py        # Script opcional de dades de prova
+├── carregar_dades.py        # Script de dades de prova
 ├── cursa_santjordi/         # Configuració del projecte
 │   ├── settings.py
 │   ├── urls.py
@@ -69,7 +63,7 @@ cursa_santjordi/
     └── templates/cursa/     # Plantilles HTML
 ```
 
-## 🗄️ Model de dades
+##  Model de dades
 
 **Categoria**
 - `nom` (CharField)
@@ -87,7 +81,7 @@ cursa_santjordi/
 
 **Relació:** Una `Categoria` pot tenir molts `Participants` (1:N).
 
-## 📍 Rutes principals
+##  Rutes principals
 
 | URL | Descripció |
 |-----|------------|
@@ -101,8 +95,8 @@ cursa_santjordi/
 | `/resultats/` | Classificació general |
 | `/admin/` | Panell d'administració |
 
-## 👤 Autor
+##  Autor
 
-Projecte realitzat per al mòdul **M0376 - Implantació d'Aplicacions Web**  
+Projecte realitzat per Axel David Rodriguez
 2n CFGS ASIX - Curs 2025-2026  
 Institut Sa Palomera
