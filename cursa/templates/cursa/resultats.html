@@ -1,0 +1,37 @@
+{% extends 'cursa/base.html' %}
+
+{% block title %}Resultats{% endblock %}
+
+{% block content %}
+<h1>🏆 Classificació General</h1>
+<p class="lead">Participants amb temps registrat, ordenats del més ràpid al més lent.</p>
+
+{% if classificacio %}
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Posició</th>
+            <th>Dorsal</th>
+            <th>Nom</th>
+            <th>Categoria</th>
+            <th>Temps</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in classificacio %}
+        <tr {% if forloop.counter == 1 %}class="table-warning"{% endif %}>
+            <td>
+                {% if forloop.counter == 1 %}🥇{% elif forloop.counter == 2 %}🥈{% elif forloop.counter == 3 %}🥉{% else %}{{ forloop.counter }}{% endif %}
+            </td>
+            <td><strong>{{ p.dorsal }}</strong></td>
+            <td>{{ p.nom }} {{ p.cognoms }}</td>
+            <td><span class="badge bg-info">{{ p.categoria.nom }}</span></td>
+            <td><strong>{{ p.temps_format }}</strong></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<div class="alert alert-info">Encara no hi ha resultats registrats.</div>
+{% endif %}
+{% endblock %}

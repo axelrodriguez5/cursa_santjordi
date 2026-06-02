@@ -1,0 +1,16 @@
+{% extends 'cursa/base.html' %}
+
+{% block title %}Eliminar participant{% endblock %}
+
+{% block content %}
+<div class="alert alert-danger">
+    <h2>Confirmar eliminació</h2>
+    <p>Estàs segur que vols eliminar el participant <strong>#{{ participant.dorsal }} {{ participant.nom }} {{ participant.cognoms }}</strong>?</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+        <a href="{% url 'llista_participants' %}" class="btn btn-secondary">Cancel·lar</a>
+    </form>
+</div>
+{% endblock %}

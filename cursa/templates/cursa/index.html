@@ -1,0 +1,42 @@
+{% extends 'cursa/base.html' %}
+
+{% block title %}Inici - Cursa Sant Jordi{% endblock %}
+
+{% block content %}
+<div class="jumbotron bg-light p-5 rounded">
+    <h1 class="display-4">🌹 Cursa de Sant Jordi</h1>
+    <p class="lead">Sistema de gestió de la cursa de l'Institut Sa Palomera.</p>
+    <hr class="my-4">
+    <p>Gestiona els participants, les categories i consulta els resultats.</p>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-4">
+        <div class="card text-white bg-primary">
+            <div class="card-body">
+                <h5 class="card-title">Participants</h5>
+                <p class="card-text display-6">{{ total_participants }}</p>
+                <a href="{% url 'llista_participants' %}" class="btn btn-light">Veure</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-success">
+            <div class="card-body">
+                <h5 class="card-title">Categories</h5>
+                <p class="card-text display-6">{{ total_categories }}</p>
+                <a href="{% url 'llista_categories' %}" class="btn btn-light">Veure</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-white bg-warning">
+            <div class="card-body">
+                <h5 class="card-title">Amb temps registrat</h5>
+                <p class="card-text display-6">{{ participants_amb_temps }}</p>
+                <a href="{% url 'resultats' %}" class="btn btn-light">Resultats</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
