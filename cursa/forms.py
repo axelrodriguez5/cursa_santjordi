@@ -1,15 +1,23 @@
+"""
+Formularis de l'aplicació, creats amb ModelForm.
+ModelForm genera els camps automàticament a partir d'un model.
+"""
 from django import forms
 from .models import Participant, Categoria
 
 
+# Formulari per afegir/editar participants
 class FormulariParticipant(forms.ModelForm):
     class Meta:
-        model = Participant
+        model = Participant  # Model en què es basa el formulari
+        # Camps que es mostraran al formulari
         fields = ['nom', 'cognoms', 'dorsal', 'email',
                   'data_naixement', 'categoria', 'temps_segons']
+        # Personalitzem el camp de data perquè mostri un selector de calendari
         widgets = {
             'data_naixement': forms.DateInput(attrs={'type': 'date'}),
         }
+        # Etiquetes en català per als camps
         labels = {
             'nom': 'Nom',
             'cognoms': 'Cognoms',
@@ -21,6 +29,7 @@ class FormulariParticipant(forms.ModelForm):
         }
 
 
+# Formulari per afegir/editar categories
 class FormulariCategoria(forms.ModelForm):
     class Meta:
         model = Categoria
